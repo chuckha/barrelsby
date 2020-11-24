@@ -11,7 +11,7 @@ function stringify(structure, previousIndentation) {
     let content = "";
     for (const key of Object.keys(structure).sort()) {
         content += `
-${nextIndentation}${key}: `;
+${nextIndentation}${key.replace(utilities_1.nonAlphaNumeric, "")}: `;
         const exported = structure[key];
         if (typeof exported === "string") {
             content += exported;
